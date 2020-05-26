@@ -33,10 +33,4 @@ from keras.optimizers import RMSprop
 model.compile(optimizer='RMSprop',loss='categorical_crossentropy',metrics=[('accuracy')])
 s=model.fit(x_train,y_train,epochs=9)
 h=model.predict(x_test)
-print(h[35])
-print(y_test[35])
-print(s.history['accuracy'][8])
-if s.history['accuracy'][8]=> 80.00:
-    print ("best model created")
-else :
-    print("retrain your model")
+print("accuracy:",s.history['accuracy'][8])
