@@ -31,6 +31,7 @@ print(summary)
 from keras.optimizers import RMSprop
 #this step will tell about optimizer, learning rate, loss, accuracy
 model.compile(optimizer='RMSprop',loss='categorical_crossentropy',metrics=[('accuracy')])
-s=model.fit(x_train,y_train,epochs=9)
+s=model.fit(x_train,y_train,epochs=9,verbose=9)
 h=model.predict(x_test)
-print("accuracy:",s.history['accuracy'][8])
+acc=s.history['accuracy'][8]
+print("accuracy:",acc*100)
